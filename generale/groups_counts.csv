@@ -76,6 +76,15 @@
 "servizi_salute_mentale","2","Sì, nel privato","aut_tot","tot",25,101,101,477,24.8
 "servizi_salute_mentale","3","Sì, sia nel pubblico che nel privato","aut_tot","tot",67,101,101,477,66.3
 "diagnosi_si_no","1","Sì","aut_tot","tot",101,101,101,477,100
+"n_diagnosi","1",NA,"aut_tot","tot",16,101,101,477,15.8
+"n_diagnosi","2",NA,"aut_tot","tot",23,101,101,477,22.8
+"n_diagnosi","3",NA,"aut_tot","tot",21,101,101,477,20.8
+"n_diagnosi","4",NA,"aut_tot","tot",19,101,101,477,18.8
+"n_diagnosi","5",NA,"aut_tot","tot",5,101,101,477,5
+"n_diagnosi","6",NA,"aut_tot","tot",11,101,101,477,10.9
+"n_diagnosi","7",NA,"aut_tot","tot",3,101,101,477,3
+"n_diagnosi","8",NA,"aut_tot","tot",2,101,101,477,2
+"n_diagnosi","9",NA,"aut_tot","tot",1,101,101,477,1
 "aut","1","Nel pubblico","aut_tot","tot",22,101,101,477,21.8
 "aut","2","Nel privato","aut_tot","tot",58,101,101,477,57.4
 "aut","3","Sia nel pubblico che nel privato","aut_tot","tot",21,101,101,477,20.8
@@ -578,6 +587,11 @@
 "servizi_salute_mentale","2","Sì, nel privato","altra_diagnosi_tot","tot",23,52,52,477,44.2
 "servizi_salute_mentale","3","Sì, sia nel pubblico che nel privato","altra_diagnosi_tot","tot",22,52,52,477,42.3
 "diagnosi_si_no","1","Sì","altra_diagnosi_tot","tot",52,52,52,477,100
+"n_diagnosi","1",NA,"altra_diagnosi_tot","tot",14,52,52,477,26.9
+"n_diagnosi","2",NA,"altra_diagnosi_tot","tot",13,52,52,477,25
+"n_diagnosi","3",NA,"altra_diagnosi_tot","tot",14,52,52,477,26.9
+"n_diagnosi","4",NA,"altra_diagnosi_tot","tot",6,52,52,477,11.5
+"n_diagnosi","5",NA,"altra_diagnosi_tot","tot",5,52,52,477,9.6
 "aut","4","No","altra_diagnosi_tot","tot",52,52,52,477,100
 "adhd","1","Nel pubblico","altra_diagnosi_tot","tot",2,52,52,477,3.8
 "adhd","2","Nel privato","altra_diagnosi_tot","tot",8,52,52,477,15.4
@@ -944,6 +958,7 @@
 "servizi_salute_mentale","3","Sì, sia nel pubblico che nel privato","no_diagnosi_tot","tot",32,295,295,477,10.8
 "servizi_salute_mentale","4","No","no_diagnosi_tot","tot",112,295,295,477,38
 "diagnosi_si_no","2","No","no_diagnosi_tot","tot",295,295,295,477,100
+"n_diagnosi","0",NA,"no_diagnosi_tot","tot",295,295,295,477,100
 "percorsi_aut___1","0","Unchecked","no_diagnosi_tot","tot",295,295,295,477,100
 "percorsi_aut___2","0","Unchecked","no_diagnosi_tot","tot",295,295,295,477,100
 "percorsi_aut___3","0","Unchecked","no_diagnosi_tot","tot",295,295,295,477,100
@@ -1037,6 +1052,16 @@
 "servizi_salute_mentale","4","No","tot","lgbtq_tot",20,184,184,477,10.9
 "diagnosi_si_no","1","Sì","tot","lgbtq_tot",106,184,184,477,57.6
 "diagnosi_si_no","2","No","tot","lgbtq_tot",78,184,184,477,42.4
+"n_diagnosi","0",NA,"tot","lgbtq_tot",78,184,184,477,42.4
+"n_diagnosi","1",NA,"tot","lgbtq_tot",23,184,184,477,12.5
+"n_diagnosi","2",NA,"tot","lgbtq_tot",16,184,184,477,8.7
+"n_diagnosi","3",NA,"tot","lgbtq_tot",29,184,184,477,15.8
+"n_diagnosi","4",NA,"tot","lgbtq_tot",17,184,184,477,9.2
+"n_diagnosi","5",NA,"tot","lgbtq_tot",5,184,184,477,2.7
+"n_diagnosi","6",NA,"tot","lgbtq_tot",10,184,184,477,5.4
+"n_diagnosi","7",NA,"tot","lgbtq_tot",3,184,184,477,1.6
+"n_diagnosi","8",NA,"tot","lgbtq_tot",2,184,184,477,1.1
+"n_diagnosi","9",NA,"tot","lgbtq_tot",1,184,184,477,0.5
 "aut","1","Nel pubblico","tot","lgbtq_tot",12,184,100,477,12
 "aut","2","Nel privato","tot","lgbtq_tot",39,184,100,477,39
 "aut","3","Sia nel pubblico che nel privato","tot","lgbtq_tot",17,184,100,477,17
@@ -1540,6 +1565,13 @@
 "servizi_salute_mentale","4","No","tot","no_lgbtq_tot",93,293,293,477,31.7
 "diagnosi_si_no","1","Sì","tot","no_lgbtq_tot",74,293,291,477,25.4
 "diagnosi_si_no","2","No","tot","no_lgbtq_tot",217,293,291,477,74.6
+"n_diagnosi","0",NA,"tot","no_lgbtq_tot",219,293,293,477,74.7
+"n_diagnosi","1",NA,"tot","no_lgbtq_tot",26,293,293,477,8.9
+"n_diagnosi","2",NA,"tot","no_lgbtq_tot",24,293,293,477,8.2
+"n_diagnosi","3",NA,"tot","no_lgbtq_tot",8,293,293,477,2.7
+"n_diagnosi","4",NA,"tot","no_lgbtq_tot",10,293,293,477,3.4
+"n_diagnosi","5",NA,"tot","no_lgbtq_tot",5,293,293,477,1.7
+"n_diagnosi","6",NA,"tot","no_lgbtq_tot",1,293,293,477,0.3
 "aut","1","Nel pubblico","tot","no_lgbtq_tot",10,293,60,477,16.7
 "aut","2","Nel privato","tot","no_lgbtq_tot",19,293,60,477,31.7
 "aut","3","Sia nel pubblico che nel privato","tot","no_lgbtq_tot",4,293,60,477,6.7
@@ -1962,6 +1994,15 @@
 "servizi_salute_mentale","2","Sì, nel privato","aut","lgbtq",16,68,68,477,23.5
 "servizi_salute_mentale","3","Sì, sia nel pubblico che nel privato","aut","lgbtq",47,68,68,477,69.1
 "diagnosi_si_no","1","Sì","aut","lgbtq",68,68,68,477,100
+"n_diagnosi","1",NA,"aut","lgbtq",9,68,68,477,13.2
+"n_diagnosi","2",NA,"aut","lgbtq",12,68,68,477,17.6
+"n_diagnosi","3",NA,"aut","lgbtq",17,68,68,477,25
+"n_diagnosi","4",NA,"aut","lgbtq",13,68,68,477,19.1
+"n_diagnosi","5",NA,"aut","lgbtq",1,68,68,477,1.5
+"n_diagnosi","6",NA,"aut","lgbtq",10,68,68,477,14.7
+"n_diagnosi","7",NA,"aut","lgbtq",3,68,68,477,4.4
+"n_diagnosi","8",NA,"aut","lgbtq",2,68,68,477,2.9
+"n_diagnosi","9",NA,"aut","lgbtq",1,68,68,477,1.5
 "aut","1","Nel pubblico","aut","lgbtq",12,68,68,477,17.6
 "aut","2","Nel privato","aut","lgbtq",39,68,68,477,57.4
 "aut","3","Sia nel pubblico che nel privato","aut","lgbtq",17,68,68,477,25
@@ -2422,6 +2463,12 @@
 "servizi_salute_mentale","2","Sì, nel privato","aut","no_lgbtq",9,33,33,477,27.3
 "servizi_salute_mentale","3","Sì, sia nel pubblico che nel privato","aut","no_lgbtq",20,33,33,477,60.6
 "diagnosi_si_no","1","Sì","aut","no_lgbtq",33,33,33,477,100
+"n_diagnosi","1",NA,"aut","no_lgbtq",7,33,33,477,21.2
+"n_diagnosi","2",NA,"aut","no_lgbtq",11,33,33,477,33.3
+"n_diagnosi","3",NA,"aut","no_lgbtq",4,33,33,477,12.1
+"n_diagnosi","4",NA,"aut","no_lgbtq",6,33,33,477,18.2
+"n_diagnosi","5",NA,"aut","no_lgbtq",4,33,33,477,12.1
+"n_diagnosi","6",NA,"aut","no_lgbtq",1,33,33,477,3
 "aut","1","Nel pubblico","aut","no_lgbtq",10,33,33,477,30.3
 "aut","2","Nel privato","aut","no_lgbtq",19,33,33,477,57.6
 "aut","3","Sia nel pubblico che nel privato","aut","no_lgbtq",4,33,33,477,12.1
@@ -2768,6 +2815,11 @@
 "servizi_salute_mentale","2","Sì, nel privato","altra_diagnosi","lgbtq",8,27,27,477,29.6
 "servizi_salute_mentale","3","Sì, sia nel pubblico che nel privato","altra_diagnosi","lgbtq",15,27,27,477,55.6
 "diagnosi_si_no","1","Sì","altra_diagnosi","lgbtq",27,27,27,477,100
+"n_diagnosi","1",NA,"altra_diagnosi","lgbtq",3,27,27,477,11.1
+"n_diagnosi","2",NA,"altra_diagnosi","lgbtq",4,27,27,477,14.8
+"n_diagnosi","3",NA,"altra_diagnosi","lgbtq",12,27,27,477,44.4
+"n_diagnosi","4",NA,"altra_diagnosi","lgbtq",4,27,27,477,14.8
+"n_diagnosi","5",NA,"altra_diagnosi","lgbtq",4,27,27,477,14.8
 "aut","4","No","altra_diagnosi","lgbtq",27,27,27,477,100
 "adhd","1","Nel pubblico","altra_diagnosi","lgbtq",2,27,27,477,7.4
 "adhd","2","Nel privato","altra_diagnosi","lgbtq",6,27,27,477,22.2
@@ -3057,6 +3109,11 @@
 "servizi_salute_mentale","2","Sì, nel privato","altra_diagnosi","no_lgbtq",15,25,25,477,60
 "servizi_salute_mentale","3","Sì, sia nel pubblico che nel privato","altra_diagnosi","no_lgbtq",7,25,25,477,28
 "diagnosi_si_no","1","Sì","altra_diagnosi","no_lgbtq",25,25,25,477,100
+"n_diagnosi","1",NA,"altra_diagnosi","no_lgbtq",11,25,25,477,44
+"n_diagnosi","2",NA,"altra_diagnosi","no_lgbtq",9,25,25,477,36
+"n_diagnosi","3",NA,"altra_diagnosi","no_lgbtq",2,25,25,477,8
+"n_diagnosi","4",NA,"altra_diagnosi","no_lgbtq",2,25,25,477,8
+"n_diagnosi","5",NA,"altra_diagnosi","no_lgbtq",1,25,25,477,4
 "aut","4","No","altra_diagnosi","no_lgbtq",25,25,25,477,100
 "adhd","2","Nel privato","altra_diagnosi","no_lgbtq",2,25,25,477,8
 "adhd","4","No","altra_diagnosi","no_lgbtq",23,25,25,477,92
@@ -3317,6 +3374,7 @@
 "servizi_salute_mentale","3","Sì, sia nel pubblico che nel privato","no_diagnosi","lgbtq",10,78,78,477,12.8
 "servizi_salute_mentale","4","No","no_diagnosi","lgbtq",19,78,78,477,24.4
 "diagnosi_si_no","2","No","no_diagnosi","lgbtq",78,78,78,477,100
+"n_diagnosi","0",NA,"no_diagnosi","lgbtq",78,78,78,477,100
 "percorsi_aut___1","0","Unchecked","no_diagnosi","lgbtq",78,78,78,477,100
 "percorsi_aut___2","0","Unchecked","no_diagnosi","lgbtq",78,78,78,477,100
 "percorsi_aut___3","0","Unchecked","no_diagnosi","lgbtq",78,78,78,477,100
@@ -3394,6 +3452,7 @@
 "servizi_salute_mentale","3","Sì, sia nel pubblico che nel privato","no_diagnosi","no_lgbtq",22,217,217,477,10.1
 "servizi_salute_mentale","4","No","no_diagnosi","no_lgbtq",93,217,217,477,42.9
 "diagnosi_si_no","2","No","no_diagnosi","no_lgbtq",217,217,217,477,100
+"n_diagnosi","0",NA,"no_diagnosi","no_lgbtq",217,217,217,477,100
 "percorsi_aut___1","0","Unchecked","no_diagnosi","no_lgbtq",217,217,217,477,100
 "percorsi_aut___2","0","Unchecked","no_diagnosi","no_lgbtq",217,217,217,477,100
 "percorsi_aut___3","0","Unchecked","no_diagnosi","no_lgbtq",217,217,217,477,100

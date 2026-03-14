@@ -76,10 +76,10 @@
 #
 # OUTPUT FILES
 # ------------
-#   test_diagnosi.csv     — KW omnibus + post-hoc pairwise for diagnosis effect
-#   test_lgbt.csv         — Mann-Whitney LGBTQ+ effect
-#   test_pairwise.csv     — Mann-Whitney pairwise across 6 crossed groups
-#   test_risultati.csv    — all three sections combined in one long file
+#   test_diagnosi_prior.csv     — KW omnibus + post-hoc pairwise for diagnosis effect
+#   test_lgbt_prior.csv         — Mann-Whitney LGBTQ+ effect
+#   test_pairwise_prior.csv     — Mann-Whitney pairwise across 6 crossed groups
+#   test_risultati_prior.csv    — all three sections combined in one long file
 #   test_risultati.pdf    — one page per variable: all test tables + legend
 #   test_significativi.pdf— one page per variable with FDR < 0.05 results
 #                           + auto-generated interpretation text
@@ -89,14 +89,11 @@ rm(list = ls())   # clear workspace
 graphics.off()    # close any open graphics devices
 
 library(dplyr)    # data manipulation and case_when
-library(Hmisc)    # required by load_lumen_data.R
 
 # Load helper scripts
-source("load_lumen_data.R")
 source("compute_subgroups.R")
 
-data <- load_lumen_data()  # read and label the survey data
-data <- data[data$consenso == 1 & !is.na(data$consenso), ]  # keep consenting respondents only
+data <- read.csv("LUMEN_DATA_processed.csv", stringsAsFactors = FALSE)  # load enriched data frame produced by LUMEN_1_groups_counts.R
 
 # ==============================================================================
 # DATA PREPARATION
@@ -270,8 +267,8 @@ for (cp in coppie_diag) {
     fmt_p(p.adjust(res_diagnosi[[pcol]], method = "BH"))  # BH-corrected p per pair
 }
 
-write.csv(res_diagnosi, "test_diagnosi.csv", row.names = FALSE)  # save Step 1 results
-cat("Salvato: test_diagnosi.csv\n")
+write.csv(res_diagnosi, "test_diagnosi_prior.csv", row.names = FALSE)  # save Step 1 results
+cat("Salvato: test_diagnosi_prior.csv\n")
 
 # ==============================================================================
 # STEP 2: LGBTQ+ EFFECT — Mann-Whitney
@@ -311,8 +308,8 @@ res_lgbt <- rbind(
 )
 
 res_lgbt$MW_p_fdr <- fmt_p(p.adjust(res_lgbt$MW_p, method = "BH"))  # FDR correction across all variables
-write.csv(res_lgbt, "test_lgbt.csv", row.names = FALSE)  # save Step 2 results
-cat("Salvato: test_lgbt.csv\n")
+write.csv(res_lgbt, "test_lgbt_prior.csv", row.names = FALSE)  # save Step 2 results
+cat("Salvato: test_lgbt_prior.csv\n")
 
 # ==============================================================================
 # STEP 3: PAIRWISE COMPARISONS ACROSS ALL 6 CROSSED GROUPS
@@ -355,8 +352,8 @@ res_pw <- res_pw %>%
   ungroup() %>%
   as.data.frame()
 
-write.csv(res_pw, "test_pairwise.csv", row.names = FALSE)  # save Step 3 results
-cat("Salvato: test_pairwise.csv\n")
+write.csv(res_pw, "test_pairwise_prior.csv", row.names = FALSE)  # save Step 3 results
+cat("Salvato: test_pairwise_prior.csv\n")
 
 # ==============================================================================
 # SUMMARY: print variables with at least one significant result (FDR < 0.05)
@@ -463,8 +460,8 @@ csv_pw <- data.frame(
 )
 
 csv_all <- rbind(csv_diag, csv_diag_ph, csv_lgbt, csv_pw)  # combine all sections
-write.csv(csv_all, "test_risultati.csv", row.names = FALSE)  # save the combined file
-cat("Salvato: test_risultati.csv\n")
+write.csv(csv_all, "test_risultati_prior.csv", row.names = FALSE)  # save the combined file
+cat("Salvato: test_risultati_prior.csv\n")
 
 # ==============================================================================
 # PDF — one page per variable with all four test tables

@@ -12,7 +12,7 @@
 # for each variable, one page per variable.
 #
 # INPUT
-#   LUMEN_DATA.csv          — raw survey data (loaded via load_lumen_data.R)
+#   LUMEN_DATA_processed.csv — enriched data frame produced by LUMEN_1_groups_counts.R
 #
 # OUTPUT
 #   statistiche_prior.csv   — one row per variable × subgroup, columns:
@@ -23,7 +23,7 @@
 #   prior_boxplot.pdf       — landscape PDF, one page per priority variable
 #
 # DEPENDENCIES
-#   load_lumen_data.R       — data loading and labelling
+
 #   compute_subgroups.R     — subgroup filters (DIAGNOSI_FILTERS, LGBT_FILTERS)
 #   dplyr, moments          — data manipulation and skewness/kurtosis
 #   ggplot2, gridExtra, grid — PDF layout and custom boxplots
@@ -34,13 +34,13 @@ graphics.off()    # close any open graphics devices
 
 library(dplyr)    # data manipulation
 library(moments)  # skewness() and kurtosis()
-library(Hmisc)    # required by load_lumen_data.R
 
-# Load helper scripts that define load_lumen_data() and subgroup filter lists
-source("load_lumen_data.R")
+
+
+
 source("compute_subgroups.R")
 
-data <- load_lumen_data()  # read LUMEN_DATA.csv, apply labels/factors, filter to consenting respondents
+data <- read.csv("LUMEN_DATA_processed.csv", stringsAsFactors = FALSE)  # load enriched data frame produced by LUMEN_1_groups_counts.R
 
 
 # ==============================================================================

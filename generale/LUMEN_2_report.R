@@ -147,6 +147,7 @@ DB_VAR_ORDER <- c(
   "regione", "centro_abitato", "titolo_studio", "titolo_studio_genitore1",
   "titolo_studio_genitore2", "figli", "quanti_figli", "reddito",
   "servizi_salute_mentale", "diagnosi_si_no",
+  "n_diagnosi",
   "aut", "adhd", "pers", "ansia", "umore", "comp_al", "appr",
   "psicosi", "ocd", "ptsd", "dipendenza", "altro", "livello_aut",
   "invio_aut", "invio_adhd", "invio_person", "invio_ansia", "invio_umore",

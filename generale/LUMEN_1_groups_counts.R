@@ -43,6 +43,37 @@ data <- load_lumen_data()  # read LUMEN_DATA.csv, apply labels/factors, filter t
 data <- data[data$consenso == 1 & !is.na(data$consenso), ]
 
 # ==============================================================================
+# N_DIAGNOSI
+#
+# Counts the number of diagnoses received by each respondent.
+# Diagnosis variables (aut, adhd, pers, ansia, umore, comp_al, appr, psicosi,
+# ocd, ptsd, dipendenza, altro) are coded: 1=pubblico, 2=privato, 3=entrambi,
+# 4=no. A diagnosis is present when the value is 1, 2 or 3.
+# NA values (question not shown because diagnosi_si_no == 2) are treated as 0.
+# Result is an integer from 0 to 12, inserted after diagnosi_si_no.
+# ==============================================================================
+
+diag_vars <- c("aut", "adhd", "pers", "ansia", "umore",
+               "comp_al", "appr", "psicosi", "ocd", "ptsd",
+               "dipendenza", "altro")
+
+data$n_diagnosi <- rowSums(
+  sapply(diag_vars, function(v) data[[v]] %in% c(1, 2, 3)),
+  na.rm = TRUE
+)
+label(data$n_diagnosi) <- "Numero di diagnosi ricevute"
+
+# Reorder columns: insert n_diagnosi right after diagnosi_si_no
+col_order <- colnames(data)
+insert_after <- which(col_order == "diagnosi_si_no")
+col_order <- append(
+  col_order[col_order != "n_diagnosi"],
+  "n_diagnosi",
+  after = insert_after
+)
+data <- data[, col_order]
+
+# ==============================================================================
 # COMPUTE SUBGROUPS
 #
 # Produces a nested list:
@@ -98,3 +129,8 @@ script_dir <- tryCatch({
 output_path <- file.path(script_dir, "groups_counts.csv")  # build the full output file path
 write.csv(df_ordinato, output_path, row.names = FALSE)      # write the sorted data frame; no row indices
 message("File salvato in: ", output_path)                   # confirm the save location
+
+# Save the enriched respondent-level data frame (with n_diagnosi column)
+data_path <- file.path(script_dir, "LUMEN_DATA_processed.csv")  # output path next to the script
+write.csv(data, data_path, row.names = FALSE)                    # write all respondents x variables
+message("Dataframe salvato in: ", data_path)                     # confirm the save location

@@ -135,6 +135,8 @@ ALL_CAT_VARS <- c(
   "figli", "quanti_figli", "reddito",
   # mental health service usage and diagnosis
   "servizi_salute_mentale", "diagnosi_si_no",
+  # number of diagnoses received (0–12; computed in LUMEN_1_groups_counts.R)
+  "n_diagnosi",
   # individual diagnosis variables (value 1-3 = diagnosed, 4 = not diagnosed)
   "aut", "adhd", "pers", "ansia", "umore", "comp_al", "appr",
   "psicosi", "ocd", "ptsd", "dipendenza", "altro",
