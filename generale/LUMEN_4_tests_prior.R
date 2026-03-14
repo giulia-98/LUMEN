@@ -657,7 +657,7 @@ make_var_page <- function(col) {
 }
 
 # Generate the full results PDF (one page per variable, section separators)
-pdf("test_risultati.pdf", width = 11, height = 8.5, onefile = TRUE)
+pdf("test_risultati_prior.pdf", width = 11, height = 8.5, onefile = TRUE)
 
 sezione_corrente <- ""  # track current section to insert separator pages
 for (col in cols) {
@@ -686,7 +686,7 @@ for (col in cols) {
 }
 
 dev.off()
-cat("Salvato: test_risultati.pdf\n")
+cat("Salvato: test_risultati_prior.pdf\n")
 
 # ==============================================================================
 # SIGNIFICANT-RESULTS PDF — one page per variable with FDR < 0.05 results
@@ -974,7 +974,7 @@ cat(sprintf("\nVariabili con almeno un effetto significativo (FDR < 0.05): %d\n"
 cat(paste(vars_sig, collapse = ", "), "\n")
 
 # Generate the significant-results PDF
-pdf("test_significativi.pdf", width = 11, height = 8.5, onefile = TRUE)
+pdf("test_significativi_prior.pdf", width = 11, height = 8.5, onefile = TRUE)
 
 # Cover page: list all significant variables
 grid.newpage()
@@ -1019,5 +1019,5 @@ for (col in vars_sig) {
 }
 
 dev.off()
-cat(sprintf("Salvato: test_significativi.pdf (%d pagine variabile + copertina + sezioni)\n",
+cat(sprintf("Salvato: test_significativi_prior.pdf (%d pagine variabile + copertina + sezioni)\n",
             length(vars_sig)))
