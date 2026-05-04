@@ -35,8 +35,12 @@ LUMEN/
 | `test_lgbt_prior.csv` | LUMEN_4 |
 | `test_pairwise_prior.csv` | LUMEN_4 |
 | `test_risultati_prior.csv` | LUMEN_4 |
-| `test_risultati.pdf` | LUMEN_4 |
-| `test_significativi.pdf` | LUMEN_4 |
+| `test_risultati_prior.pdf` | LUMEN_4 |
+| `test_significativi_prior.pdf` | LUMEN_4 |
+| `stats_diagnosi_risultati.csv` | LUMEN_5 |
+| `stats_n_diagnosi.csv` | LUMEN_5 |
+| `stats_diagnosi_dataset_lungo.csv` | LUMEN_5 |
+| `stats_diagnosi_sommario.pdf` | LUMEN_5 |
 
 ---
 
@@ -93,7 +97,9 @@ Effect sizes: η² for Kruskal-Wallis, *r* = |Z| / √n for Mann-Whitney.
 
 ### Step 5 — `LUMEN_5_stats_diagnosi.R`
 
-Statistics for diagnosis-specific variables, loaded from `LUMEN_DATA_processed.csv`.
+Tests whether diagnosis group (`aut` vs `altra_diagnosi`) and LGBTQ+ status (`lgbtq` vs `no_lgbtq`) influence variables related to the diagnostic pathway: referral setting, who initiated the referral, waiting times, number of incorrect diagnoses, cost, location, and number of professionals consulted.
+
+The dataset is reshaped to long format (one row per respondent × diagnosis received). Mixed-effects models with a by-subject random intercept (`(1|record_id)`) are used to account for the nested structure. Model type varies by outcome: `clmm` for ordinal outcomes, `mblogit` for nominal, `glmer` (binomial) for the binary outcome (`sbagliate`). p-values are computed via Likelihood Ratio Test; BH-FDR correction is applied separately for each predictor. An additional Kruskal-Wallis and Mann-Whitney test is run on `n_diagnosi` (number of diagnoses per respondent) using the wide-format dataset.
 
 ---
 
@@ -102,10 +108,16 @@ Statistics for diagnosis-specific variables, loaded from `LUMEN_DATA_processed.c
 | Key | Definition |
 |---|---|
 | `aut` | `aut ∈ {1, 2, 3}` (autism diagnosis, public / private / both) |
-| `altra_diagnosi` | `aut == 4` AND at least one other diagnosis column `∈ {1, 2, 3}` |
+| `altra_diagnosi` | `aut == 4` OR `aut == NA` AND at least one other diagnosis column `∈ {1, 2, 3}` |
 | `no_diagnosi` | `diagnosi_si_no == 2` |
 | `lgbtq` | `trans_cis == 1` OR `identita_genere ∉ {1, 2}` OR `orientamento_sex ≠ 1` |
 | `no_lgbtq` | `trans_cis == 2` AND `identita_genere ∈ {1, 2}` AND `orientamento_sex == 1` |
+
+**Notes:**
+- `altra_diagnosi` includes 22 respondents whose `aut` question was hidden by REDCap skip logic (`aut == NA`) but who reported at least one other diagnosis.
+- 7 respondents with `diagnosi_si_no == 1` but all individual diagnosis columns at `4` or `NA` cannot be classified and are excluded from all diagnosis-group analyses (`escluso_diagnosi = TRUE`).
+- Respondents with all three LGBTQ+ variables (`trans_cis`, `identita_genere`, `orientamento_sex`) equal to `NA` are excluded from LGBTQ+-group analyses (`lgbtq = NA`).
+- `adhd` is not included in the `altra_diagnosi` filter columns (`pers`, `ansia`, `umore`, `comp_al`, `appr`, `psicosi`, `ocd`, `ptsd`, `dipendenza`, `altro`).
 
 ---
 
@@ -115,7 +127,8 @@ R ≥ 4.1 with the following packages:
 
 ```r
 install.packages(c("Hmisc", "dplyr", "tidyr", "ggplot2",
-                   "scales", "gridExtra", "grid", "moments"))
+                   "scales", "gridExtra", "grid", "moments",
+                   "ordinal", "mclogit", "lme4", "dunn.test"))
 ```
 
 ---
