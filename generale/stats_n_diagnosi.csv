@@ -1,0 +1,3 @@
+"test","confronto","n","t","df","p_value","sig"
+"Welch t-test","aut vs altra_diagnosi",169,4.08,167,1e-04,TRUE
+"Welch t-test","lgbtq vs no_lgbtq",464,7.383,242,0,TRUE
